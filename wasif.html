@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LUZAIN | Premium Skincare</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #17251e;
+      background: #fff;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* ================= TOP BAR ================= */
+
+    .top-bar {
+      background: #0d3325;
+      color: white;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 45px;
+      font-size: 11px;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 45px;
+      border-bottom: 1px solid #eee;
+      background: white;
+    }
+
+    .logo {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      letter-spacing: 6px;
+      color: #17251e;
+    }
+
+    .logo small {
+      display: block;
+      font-family: Arial, sans-serif;
+      font-size: 8px;
+      letter-spacing: 5px;
+      text-align: center;
+      margin-top: -4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #52745e;
+    }
+
+    .icons {
+      display: flex;
+      gap: 18px;
+      font-size: 21px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 500px;
+      background:
+        linear-gradient(90deg, rgba(247,245,238,0.98) 0%, rgba(247,245,238,0.85) 42%, rgba(247,245,238,0.1) 75%),
+        url("https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1800&q=85");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding: 70px 7%;
+    }
+
+    .hero-content {
+      max-width: 520px;
+    }
+
+    .hero-content .small-title {
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: Georgia, serif;
+      font-size: 64px;
+      line-height: 1.02;
+      font-weight: normal;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 em {
+      color: #456b55;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border: 1px solid #163c2b;
+      background: #123c2a;
+      color: white;
+      font-size: 12px;
+      margin-right: 10px;
+      text-transform: uppercase;
+    }
+
+    .btn.secondary {
+      background: transparent;
+      color: #123c2a;
+    }
+
+    /* ================= BENEFITS ================= */
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: 1px solid #eee;
+      border-top: 1px solid #eee;
+    }
+
+    .benefit {
+      padding: 22px;
+      text-align: center;
+      border-right: 1px solid #eee;
+    }
+
+    .benefit strong {
+      display: block;
+      font-size: 12px;
+      margin-bottom: 7px;
+    }
+
+    .benefit span {
+      color: #777;
+      font-size: 11px;
+    }
+
+    /* ================= SECTION ================= */
+
+    .section {
+      padding: 55px 5%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-family: Georgia, serif;
+      font-size: 28px;
+      margin-bottom: 35px;
+    }
+
+    /* ================= CATEGORIES ================= */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 25px;
+    }
+
+    .category {
+      text-align: center;
+    }
+
+    .category img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    .category h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 7px;
+    }
+
+    .category p {
+      font-size: 11px;
+      color: #777;
+    }
+
+    /* ================= PRODUCTS ================= */
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: 25px;
+    }
+
+    .view-all {
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .product {
+      position: relative;
+    }
+
+    .product-img {
+      background: #f5f3ed;
+      aspect-ratio: 0.8;
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
+    }
+
+    .heart {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      background: white;
+      border-radius: 50%;
+      width: 27px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+    }
+
+    .product h3 {
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    .price {
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    .rating {
+      color: #0d3325;
+      font-size: 11px;
+      margin-top: 7px;
+    }
+
+    /* ================= PROMO ================= */
+
+    .promos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .promo {
+      min-height: 240px;
+      padding: 35px;
+      background: #eee9df;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .promo:nth-child(2) {
+      background: #e8ded4;
+    }
+
+    .promo-text {
+      max-width: 55%;
+    }
+
+    .promo small {
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .promo h2 {
+      font-family: Georgia, serif;
+      font-size: 30px;
+      font-weight: normal;
+      margin: 12px 0;
+    }
+
+    .promo p {
+      font-size: 11px;
+      color: #555;
+      line-height: 1.5;
+      margin-bottom: 18px;
+    }
+
+    .promo img {
+      width: 35%;
+      max-height: 190px;
+      object-fit: contain;
+    }
+
+    /* ================= NEWSLETTER ================= */
+
+    .newsletter {
+      background: #f7f6f1;
+      padding: 30px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .newsletter h3 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .newsletter p {
+      font-size: 11px;
+      color: #666;
+    }
+
+    .email-box {
+      display: flex;
+      width: 45%;
+    }
+
+    .email-box input {
+      flex: 1;
+      padding: 14px;
+      border: 1px solid #ddd;
+      outline: none;
+    }
+
+    .email-box button {
+      background: #123c2a;
+      color: white;
+      border: none;
+      padding: 0 25px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #fafafa;
+      padding: 45px 5% 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    .footer-logo {
+      font-family: Georgia, serif;
+      font-size: 28px;
+      letter-spacing: 5px;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #666;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    footer h4 {
+      font-size: 12px;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    footer li {
+      list-style: none;
+      font-size: 11px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .copyright {
+      background: #0d3325;
+      color: white;
+      margin: 0 -5%;
+      padding: 14px 5%;
+      font-size: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      header {
+        padding: 0 20px;
+      }
+
+      .top-bar {
+        padding: 0 15px;
+        font-size: 9px;
+      }
+
+      .hero {
+        min-height: 550px;
+        padding: 40px 25px;
+      }
+
+      .hero h1 {
+        font-size: 46px;
+      }
+
+      .benefits {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .categories {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .promos {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .email-box {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .logo {
+        font-size: 24px;
+      }
+
+      .icons {
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span>🚚 FREE SHIPPING ON ORDERS OVER ৳999</span>
+    <span>✨ 10% OFF YOUR FIRST ORDER | CODE: LUZAIN10</span>
+    <span>HELP & FAQS &nbsp;&nbsp; TRACK ORDER</span>
+  </div>
+
+
+  <!-- HEADER -->
+  <header>
+
+    <a href="#" class="logo">
+      LUZAIN
+      <small>SKINCARE</small>
+    </a>
+
+    <nav>
+      <a href="#">New In</a>
+      <a href="#">Skincare ▾</a>
+      <a href="#">Best Sellers</a>
+      <a href="#">Collections ▾</a>
+      <a href="#">About Us</a>
+      <a href="#">Sale</a>
+    </nav>
+
+    <div class="icons">
+      <span>⌕</span>
+      <span>♙</span>
+      <span>♡</span>
+      <span>🛍</span>
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="small-title">NEW COLLECTION</div>
+
+      <h1>
+        Healthy Skin.<br>
+        <em>Real Confidence.</em>
+      </h1>
+
+      <p>
+        Clean skincare. Powerful results.
+        Discover products carefully selected
+        for your skin.
+      </p>
+
+      <a href="#" class="btn">Shop Now</a>
+      <a href="#" class="btn secondary">Explore Collection</a>
+
+    </div>
+
+  </section>
+
+
+  <!-- BENEFITS -->
+  <section class="benefits">
+
+    <div class="benefit">
+      <strong>✦ QUALITY PRODUCTS</strong>
+      <span>Carefully selected for you</span>
+    </div>
+
+    <div class="benefit">
+      <strong>♧ AUTHENTIC PRODUCTS</strong>
+      <span>Quality you can trust</span>
+    </div>
+
+    <div class="benefit">
+      <strong>🚚 FAST DELIVERY</strong>
+      <span>Across Bangladesh</span>
+    </div>
+
+    <div class="benefit">
+      <strong>↻ EASY RETURNS</strong>
+      <span>Simple return policy</span>
+    </div>
+
+  </section>
+
+
+  <!-- SKIN CONCERNS -->
+  <section class="section">
+
+    <h2 class="section-title">SHOP BY SKIN CONCERN</h2>
+
+    <div class="categories">
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=500&q=80">
+        <h4>Acne & Blemish</h4>
+        <p>Shop Now</p>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=500&q=80">
+        <h4>Hydration</h4>
+        <p>Shop Now</p>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?auto=format&fit=crop&w=500&q=80">
+        <h4>Anti-Aging</h4>
+        <p>Shop Now</p>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=500&q=80">
+        <h4>Brightening</h4>
+        <p>Shop Now</p>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=500&q=80">
+        <h4>Sensitive Skin</h4>
+        <p>Shop Now</p>
+      </div>
+
+      <div class="category">
+        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=500&q=80">
+        <h4>Dryness</h4>
+        <p>Shop Now</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRODUCTS -->
+  <section class="section">
+
+    <div class="section-heading">
+      <h2>BEST SELLERS</h2>
+      <a href="#" class="view-all">View All →</a>
+    </div>
+
+    <div class="products">
+
+      <div class="product">
+        <div class="product-img">
+          <span class="heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=600&q=80">
+        </div>
+        <h3>Purifying Gel Cleanser</h3>
+        <div class="price">৳1,200</div>
+        <div class="rating">★★★★★ (28)</div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <span class="heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80">
+        </div>
+        <h3>Hyaluronic Acid Serum</h3>
+        <div class="price">৳1,650</div>
+        <div class="rating">★★★★★ (96)</div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <span class="heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=600&q=80">
+        </div>
+        <h3>Vitamin C Glow Serum</h3>
+        <div class="price">৳1,800</div>
+        <div class="rating">★★★★★ (74)</div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <span class="heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?auto=format&fit=crop&w=600&q=80">
+        </div>
+        <h3>Barrier Restore Moisturizer</h3>
+        <div class="price">৳1,450</div>
+        <div class="rating">★★★★★ (112)</div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <span class="heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?auto=format&fit=crop&w=600&q=80">
+        </div>
+        <h3>Retinol Night Cream</h3>
+        <div class="price">৳1,900</div>
+        <div class="rating">★★★★★ (88)</div>
+      </div>
+
+      <div class="product">
+        <div class="product-img">
+          <span class="heart">♡</span>
+          <img src="https://images.unsplash.com/photo-1556229162-5c63ed9c4efb?auto=format&fit=crop&w=600&q=80">
+        </div>
+        <h3>Daily Sunscreen SPF 50</h3>
+        <div class="price">৳1,300</div>
+        <div class="rating">★★★★★ (65)</div>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROMOTIONAL BANNERS -->
+  <section class="section">
+
+    <div class="promos">
+
+      <div class="promo">
+
+        <div class="promo-text">
+          <small>LUZAIN EVERY DAY</small>
+
+          <h2>Get 10% Off<br>Your First Order</h2>
+
+          <p>
+            Join our community and discover
+            skincare that works.
+          </p>
+
+          <a href="#" class="btn">Shop The Offer</a>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=500&q=80">
+
+      </div>
+
+
+      <div class="promo">
+
+        <div class="promo-text">
+          <small>LUZAIN REWARDS</small>
+
+          <h2>Good Skin Deserves<br>Great Rewards</h2>
+
+          <p>
+            Earn points, unlock perks and
+            enjoy members-only offers.
+          </p>
+
+          <a href="#" class="btn">Join Now</a>
+        </div>
+
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=500&q=80">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+
+    <div>
+      <h3>SKINCARE TIPS & EXCLUSIVE OFFERS</h3>
+      <p>Subscribe to get special offers and updates.</p>
+    </div>
+
+    <div class="email-box">
+      <input type="email" placeholder="Enter your email address">
+      <button onclick="subscribe()">SUBSCRIBE</button>
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-logo">LUZAIN</div>
+
+        <p>
+          Clean. Conscious. Effective.
+          Skincare made with care for
+          your skin and confidence.
+        </p>
+
+        <br>
+
+        <p>Instagram &nbsp; Facebook &nbsp; TikTok &nbsp; YouTube</p>
+      </div>
+
+
+      <div>
+        <h4>Shop</h4>
+
+        <ul>
+          <li>New In</li>
+          <li>Best Sellers</li>
+          <li>Collections</li>
+          <li>Gift Sets</li>
+          <li>Sale</li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h4>Customer Care</h4>
+
+        <ul>
+          <li>Shipping & Delivery</li>
+          <li>Returns & Refunds</li>
+          <li>Track Order</li>
+          <li>Contact Us</li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h4>About Us</h4>
+
+        <ul>
+          <li>Our Story</li>
+          <li>Ingredients</li>
+          <li>Blog</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+
+
+      <div>
+        <h4>Why LUZAIN?</h4>
+
+        <ul>
+          <li>🚚 Fast Delivery</li>
+          <li>↻ Easy Returns</li>
+          <li>🔒 Secure Payment</li>
+          <li>✓ Quality Products</li>
+        </ul>
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      <span>© 2026 LUZAIN SKINCARE. ALL RIGHTS RESERVED.</span>
+      <span>VISA &nbsp; Mastercard &nbsp; bKash &nbsp; Nagad</span>
+    </div>
+
+  </footer>
+
+
+  <script>
+
+    function subscribe() {
+      const email = document.querySelector(".email-box input").value;
+
+      if (email === "") {
+        alert("দয়া করে আপনার Email দিন।");
+      } else {
+        alert("ধন্যবাদ! আপনার Email সফলভাবে সাবস্ক্রাইব হয়েছে।");
+      }
+    }
+
+  </script>
+
+</body>
+</html>
